@@ -3,13 +3,13 @@ def caesar_encrypt(text, k):
     return ''.join(chr((ord(c)-97+k)%26+97) if c.isalpha() else c for c in text.lower())
 print(caesar_encrypt("hello", 3))  # khoor
 
-MonoAlphabetic cipher
+Mono alphabetic cipher
 import string
 key = dict(zip(string.ascii_lowercase, "QWERTYUIOPASDFGHJKLZXCVBNM".lower()))
 def mono_encrypt(text): return ''.join(key.get(c, c) for c in text.lower())
 print(mono_encrypt("hello"))  # itssg
 
-polyalphabetic cipher
+poly alphabetic cipher
 def vigenere_encrypt(text, key):
     return ''.join(chr((ord(t)-97+ord(key[i%len(key)])-97)%26+97) for i, t in enumerate(text.lower()) if t.isalpha())
 print(vigenere_encrypt("attackatdawn", "lemon"))  # lxfopvefrnhr
@@ -39,7 +39,7 @@ phi = (p-1)*(q-1)
 d = inverse(e, phi)
 print(f"Private key: {d}")  # 1163
 
-playfair cipher
+play fair cipher
 def create_matrix(key):
     key = "".join(dict.fromkeys(key + "abcdefghiklmnopqrstuvwxyz"))
     return [list(key[i:i+5]) for i in range(0, 25, 5)]
