@@ -65,7 +65,7 @@ def playfair_encrypt(msg, key):
     return res
 print(playfair_encrypt("hello", "monarchy"))  # encrypted text
 
-keyword-based Monoalphabetic Cipher
+keyword-based mono alphabetic Cipher
 from string import ascii_lowercase
 def keyword_cipher(text, keyword):
     key = "".join(dict.fromkeys(keyword + ascii_lowercase))
