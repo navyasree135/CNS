@@ -3,7 +3,7 @@ def caesar_encrypt(text, k):
     return ''.join(chr((ord(c)-97+k)%26+97) if c.isalpha() else c for c in text.lower())
 print(caesar_encrypt("hello", 3))  # khoor
 
-Mono alphabetic cipher
+mono alphabetic cipher
 import string
 key = dict(zip(string.ascii_lowercase, "QWERTYUIOPASDFGHJKLZXCVBNM".lower()))
 def mono_encrypt(text): return ''.join(key.get(c, c) for c in text.lower())
@@ -31,7 +31,7 @@ def otp_encrypt(msg, key):
     return ''.join(chr((ord(c)-97+k)%26+97) for c, k in zip(msg, key))
 print(otp_encrypt("sendmoremoney", [9,0,1,7,23,15,21,14,11,11,2,8,9]))  # encrypted
 
-RSA key
+rsa key
 from Crypto.Util.number import inverse
 e, n = 31, 3599
 p, q = 59, 61  # trial factorization
@@ -65,7 +65,7 @@ def playfair_encrypt(msg, key):
     return res
 print(playfair_encrypt("hello", "monarchy"))  # encrypted text
 
-Keyword-based Monoalphabetic Cipher
+keyword-based Monoalphabetic Cipher
 from string import ascii_lowercase
 def keyword_cipher(text, keyword):
     key = "".join(dict.fromkeys(keyword + ascii_lowercase))
