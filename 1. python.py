@@ -9,7 +9,7 @@ key = dict(zip(string.ascii_lowercase, "QWERTYUIOPASDFGHJKLZXCVBNM".lower()))
 def mono_encrypt(text): return ''.join(key.get(c, c) for c in text.lower())
 print(mono_encrypt("hello"))  # itssg
 
-poly alphabetic cipher
+poly alphabetic cipher/vigener cipher
 def vigenere_encrypt(text, key):
     return ''.join(chr((ord(t)-97+ord(key[i%len(key)])-97)%26+97) for i, t in enumerate(text.lower()) if t.isalpha())
 print(vigenere_encrypt("attackatdawn", "lemon"))  # lxfopvefrnhr
